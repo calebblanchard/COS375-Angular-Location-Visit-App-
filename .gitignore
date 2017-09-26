@@ -1,55 +1,42 @@
-# Compiled class file
-*.class
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Log file
-*.log
+# compiled output
+/dist
+/tmp
+/out-tsc
 
-# Package Files #
-*.war
-*.ear
-*.tar.gz
-*.rar
+# dependencies
+/node_modules
 
-# Binaries
-*.7z
-*.dmg
-*.gz
-*.iso
-*.sar
-*.ser
-
-# Maven 
-target/
-
-# IntelliJ project files 
-*.iml
-*.iws
-*.ipr
-.idea/
-
-# eclipse project file
-.settings/
-.classpath
+# IDEs and editors
+/.idea
 .project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# NetBeans specific
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
 
-# OS
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
 .DS_Store
-
-# Misc
-*.swp
-release.properties
-pom.xml.releaseBackup
-pom.xml.tag
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+Thumbs.db

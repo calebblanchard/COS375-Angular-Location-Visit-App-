@@ -1,0 +1,17 @@
+<div class="pull-xs-right">
+  <small>
+    Visits:
+    <span *ngIf="container.locCount > 0">
+      {{ container.locCount }} visit(s)
+    </span>
+    <span *ngIf="container.locCount == 0">
+      (empty)
+    </span>
+  </small>
+  <button class="btn btn-sm bg-inverse" [disabled]="container.locCount == 0"
+          routerLink="/visit"></button>
+  <button class="btn btn-sm bg-inverse" [disabled]="container.locCount == 0">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+
+</div>

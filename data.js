@@ -30,6 +30,6 @@ module.exports = function () {
 			fieldWorkerName: "FieldWorker3"
 		}
 		],
-		orders: []
+		transfers: []
 	}
 }

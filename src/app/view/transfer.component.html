@@ -1,0 +1,33 @@
+<div class="navbar navbar-inverse bg-inverse">
+  <a class="navbar-brand">Demographic System</a>
+</div>
+<div *ngIf="transferSent" class="m-a-1 text-xs-center">
+  <h2>Thanks!</h2>
+  <p>Thanks for transferring your list of Visits.</p>
+  <button class="btn btn-primary" routerLink="/view">
+    Return to Demographics Entry
+  </button>
+</div>
+<form *ngIf="!transferSent" #form="ngForm" novalidate
+      (ngSubmit)="submitTransfer(form)" class="m-a-1">
+  <div class="form-group">
+    <label>Fieldworker Name</label>
+    <input class="form-control" #name="ngModel" name="name"
+           [(ngModel)]="transfer.name" required />
+    <span  *ngIf="transferred && name.invalid" class="text-danger">
+      Please enter your name
+    </span>
+  </div>
+  <div class="form-group">
+    <label>Cell Number</label>
+    <input class="form-control" #cellPhoneNum="ngModel" name="cellPhoneNum"
+           [(ngModel)]="transfer.cellPhoneNum" required />
+    <span  *ngIf="transferred && cellPhoneNum.invalid" class="text-danger">
+      Please enter your cell phone number
+    </span>
+  </div>
+  <div class="text-xs-center">
+    <button class="btn btn-secondary" routerLink="/visit">Back</button>
+    <button class="btn btn-primary" type="submit">Complete Transfer</button>
+  </div>
+</form>

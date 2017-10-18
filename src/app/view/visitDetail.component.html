@@ -1,0 +1,53 @@
+<div class="navbar navbar-inverse bg-inverse">
+  <a class="navbar-brand">Demographic System</a>
+</div>
+<div class="m-a-1">
+  <h2 class="text-xs-center">Visit Lists</h2>
+  <table class="table table-bordered table-striped p-a-1">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="container.visits.length == 0">
+        <td colspan="4" class="text-xs-center">
+          You have no visits
+        </td>
+      </tr>
+      <tr *ngFor="let visit of container.visits">
+        <td>
+          {{visit.location.name}}
+        </td>
+        <td>
+          {{visit.location.latitude}}
+        </td>
+        <td class="text-xs-right">
+          {{visit.location.longitude}}
+        </td>
+        <td class="text-xs-center">
+          <button class="btn btn-sm btn-danger"
+                  (click)="container.removeVisit(visit.location.id)">
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="text-xs-left">
+          Total # Visits:  {{container.locCount}}
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<div class="text-xs-center">
+  <button class="btn btn-primary" routerLink="/view">Continue Visits</button>
+  <button class="btn btn-secondary" routerLink="/transfer"
+          [disabled]="container.visits.length == 0">
+    Transfer Visits
+  </button>
+</div>

@@ -6,7 +6,7 @@ export class Transfer {
   public id: number;
   public name: string;
   public cellPhoneNum: string;
-  public transferred = false;
+  public shipped = false;
 
   constructor(public container: VisitContainer) { }
 
@@ -14,7 +14,7 @@ export class Transfer {
     this.id = null;
     this.name = null;
     this.cellPhoneNum = null;
-    this.transferred = false;
+    this.shipped = false;
     this.container.clear();
   }
 }

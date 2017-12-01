@@ -1,0 +1,39 @@
+<!--
+The component methods provide access to the products in the repository and allow products to be
+deleted. The other operations will be handled by the editor component, which will be activated using
+routing URLs in the component’s template. To provide the template, I added a file called productTable.
+component.html in the SportsStore/src/app/admin folder and added the markup shown in Listing 9-24.
+
+The template contains a table that uses the ngFor directive to generate a row for each product returned
+by the component’s getProducts method. Each row contains a Delete button that invokes the component’s
+delete method and an Edit button that navigates to a URL that targets the editor component. The editor
+component is also the target of the Create New Product, although a different URL is used.
+-->
+
+<table class="table table-sm table-striped">
+  <thead>
+  <tr>
+    <th>ID</th><th>Name</th><th>County</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let l of getLocations()">
+    <td>{{l.id}}</td>
+    <td>{{l.name}}</td>
+    <td>{{l.county}}</td>
+    <td>
+      <button class="btn btn-sm btn-warning"
+              [routerLink]="['/admin/main/locations/edit', l.id]">
+        Edit
+      </button>
+      <button class="btn btn-sm btn-danger" (click)="deleteLocation(l.id)">
+        Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary" routerLink="/admin/main/locations/create">
+  Create New Location
+</button>

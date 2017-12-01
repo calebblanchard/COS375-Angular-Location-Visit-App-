@@ -1,0 +1,45 @@
+<!--
+Angular will provide an ActivatedRoute object as a constructor argument when it creates a new instance
+of the component class and that can be used to inspect the activated route. In this case, the component works
+out whether it should be editing or creating a product and, if editing, retrieves the current details from the
+repository. There is also a save method, which uses the repository to save changes that the user has made.
+To provide the component with a template, I added a file called productEditor.component.html in the
+SportsStore/src/app/admin folder and added the markup shown in Listing 9-26
+
+The template contains a form with fields for the properties defined by the Product model class, with the
+exception of the id property, which is assigned automatically by the RESTful web service.
+
+The elements in the form adapt their appearance to differentiate between the editing and creating
+features. To see how the component works, authenticate to access the Admin features and click the Create
+New Product button that appears under the table of products. Fill out the form, click the Create button,
+and the new product will be sent to the RESTful web service where it will be assigned an ID property and
+displayed in the product table, as shown in Figure 9-5.
+-->
+
+<div class="bg-primary p-a-1" [class.bg-warning]="editing">
+  <h5>{{editing ? "Edit" : "Create"}} Location</h5>
+</div>
+<form novalidate #form="ngForm" (ngSubmit)="save(form)" >
+  <div class="form-group">
+    <label>Name</label>
+    <input class="form-control" name="name" [(ngModel)]="location.name" />
+  </div>
+  <div class="form-group">
+    <label>County</label>
+    <input class="form-control" name="county" [(ngModel)]="location.county" />
+  </div>
+  <div class="form-group">
+    <label>Latitude</label>
+    <input class="form-control" name="latitude" [(ngModel)]="location.latitude" />
+  </div>
+  <div class="form-group">
+    <label>Longitude</label>
+    <input class="form-control" name="longitude" [(ngModel)]="location.longitude" />
+  </div>
+  <button type="submit" class="btn btn-primary" [class.btn-warning]="editing">
+    {{editing ? "Save" : "Create"}}
+  </button>
+  <button type="reset" class="btn btn-secondary" routerLink="/admin/main/locations">
+    Cancel
+  </button>
+</form>

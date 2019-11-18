@@ -10,11 +10,6 @@
           [class.active]="county == selectedCounty" (click)="changeCounty(county)">
     {{county}}
   </button>
-  <!--
-  To see the result, use the browser’s F12 developer tools to see the network requests made by the browser
-  as the application is loaded. The files for the administration module will not be loaded until you click the
-  Admin button, at which point Angular will request the files and display the login page shown in Figure 9-1.
-  -->
   <button class="btn btn-block btn-danger m-t-3" routerLink="/admin">
     Admin
   </button>

@@ -1,15 +1,3 @@
-<!--
-The component methods provide access to the products in the repository and allow products to be
-deleted. The other operations will be handled by the editor component, which will be activated using
-routing URLs in the component’s template. To provide the template, I added a file called productTable.
-component.html in the SportsStore/src/app/admin folder and added the markup shown in Listing 9-24.
-
-The template contains a table that uses the ngFor directive to generate a row for each product returned
-by the component’s getProducts method. Each row contains a Delete button that invokes the component’s
-delete method and an Edit button that navigates to a URL that targets the editor component. The editor
-component is also the target of the Create New Product, although a different URL is used.
--->
-
 <table class="table table-sm table-striped">
   <thead>
   <tr>

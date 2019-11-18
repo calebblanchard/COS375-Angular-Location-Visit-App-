@@ -8,12 +8,6 @@ import { RestDataSource } from './rest.datasource';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './auth.service';
 
-/*
-Listing 9-10 registers the new service with the model feature module. It also adds a providers entry for
-the RestDataSource class, which has been used only as a substitute for the StaticDataSource class in earlier
-chapters. Since the AuthService class has a RestDataSource constructor parameter, it needs its own entry in
-the module
- */
 @NgModule({
   imports: [HttpModule],
   providers: [LocationRepository, VisitContainer, Transfer, TransferRepository,

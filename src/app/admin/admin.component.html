@@ -1,20 +1,3 @@
-<!--
-The components created in the previous section will be responsible for specific features. To bring those
-features together and allow the user to navigate between them, I need to modify the template of the
-placeholder component that I have been using to demonstrate the result of a successful authentication
-attempt. I replaced the placeholder content with the elements shown in Listing 9-20.
-Listing 9-20. Replacing the Content in the admin.component.html File
-
-This template contains a router-outlet element that will be used to display the components from the
-previous section. There are also buttons that will navigate the application to the /admin/main/products
-and /admin/main/orders URLs, which will select the products or orders features. These buttons use the
-routerLinkActive attribute, which is used to add the element to a CSS class when the route specified by the
-routerLink attribute is active.
-The template also contains a Logout button that has an event binding that targets a method called
-logout. Listing 9-21 adds this method to the component, which uses the authentication service to remove
-the bearer token and navigates the application to the default URL.
-
--->
 <div class="navbar navbar-inverse bg-info">
   <a class="navbar-brand">Demographic System Admin</a>
 </div>

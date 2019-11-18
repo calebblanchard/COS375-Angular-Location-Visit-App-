@@ -3,10 +3,6 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../model/auth.service';
 
-/*
-The next step is to wire up the component that obtains the credentials from the user so that it will perform
-authentication through the new service, as shown in Listing 9-11.
- */
 @Component({
   moduleId: module.id,
   templateUrl: 'auth.component.html'

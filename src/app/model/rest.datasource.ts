@@ -9,16 +9,6 @@ import 'rxjs/add/operator/map';
 const PROTOCOL = 'http';
 const PORT = 3500;
 
-/*
-The RESTful data source is the class that will do most of the work because it is responsible for sending
-the authentication request to the /login URL and including the JWT in later requests. Listing 9-8 adds
-authentication to the RestDataSource class and extends the sendRequest method so that it can include the
-JWT in requests.
-
-With the authentication system in place, the next step is to extend the data source so that it can send
-authenticated requests and to expose those features through the order and product repository classes.
-Listing 9-14 adds methods to the data source that include the authentication token.
- */
 @Injectable()
 export class RestDataSource {
   baseUrl: string;
